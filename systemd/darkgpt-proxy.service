@@ -1,0 +1,15 @@
+[Unit]
+Description=DarkGPT OpenRouter Proxy with Jailbreak
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/darkgpt
+EnvironmentFile=/opt/darkgpt/.env
+ExecStart=/usr/bin/python3 /opt/darkgpt/darkgpt-proxy.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
